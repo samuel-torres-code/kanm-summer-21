@@ -44,6 +44,7 @@ Python3 v3.8.10
 
 ### Congratulations you have the beginnings of the new KANM Webiste now on your computer!
 
+
 ![Smile](https://c.tenor.com/R-qraEi25W4AAAAM/emoji.gif)
 
 
@@ -88,6 +89,7 @@ pip3 install -r requirements.txt`
 `python3 server.py`
 
 * The Terminal should look like this:
+
 ![image](https://media.github.tamu.edu/user/14956/files/0ad7ea80-8e90-11ec-99b3-409421fdb4af)
 
 *  To test this, you can go to http://127.0.0.1:5000/members
@@ -129,6 +131,7 @@ pip3 install -r requirements.txt`
 `npm start`
 
 * If all goes well, you should see this in your console:
+
 ![image](https://media.github.tamu.edu/user/14956/files/50e57c00-8e99-11ec-9750-c03a28c35958)
  * VSCode will auto open your browser to localhost:3000
   * If it doesn't, go to localhost:3000 in Chrome or Firefox
@@ -136,6 +139,7 @@ pip3 install -r requirements.txt`
 * You should see the list from the backend that we saw earlier displayed on your screen.
 
 If you made it this far, I congratulate you!
+
 ![image](https://media.github.tamu.edu/user/14956/files/b6d20380-8e99-11ec-9d82-edf9655f2e05)
 
 Feel free to poke around the code and make changes on your own. Please don't push anything. Thanks.
