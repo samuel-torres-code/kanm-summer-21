@@ -20,7 +20,7 @@ The public version of the starter code for the new KANM website
 
 * Mac users don't have to worry about WSL Ubuntu as their terminal supports most of these commands natively
 
-* Linux users you scare me. You shouldn't have any issue with this.
+* Linux users: you scare me. You shouldn't have any issue with this.
 
 
 ## Cloning the files
