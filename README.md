@@ -47,7 +47,7 @@ Python3 v3.8.10
 ![Smile](https://c.tenor.com/R-qraEi25W4AAAAM/emoji.gif)
 
 
-# Setting up the backend (Flask)
+## Setting up the backend (Flask)
 
 * Go ahead and open the new react-flask-kanm-public folder in a new VSCode window to make things easier
 
@@ -90,8 +90,56 @@ pip3 install -r requirements.txt`
 * The Terminal should look like this:
 ![image](https://media.github.tamu.edu/user/14956/files/0ad7ea80-8e90-11ec-99b3-409421fdb4af)
 
-*  test this, you can go to http://127.0.0.1:5000/members and you should be able to find your name on the list.
-However, http://127.0.0.1:5000/ should take you nowhere. We will fix this by starting our frontend.
+*  To test this, you can go to http://127.0.0.1:5000/members
+
+ *  A list of all of the committee members names should show up.
+ 
+ *  **However, http://127.0.0.1:5000/ should take you nowhere.** We will fix this by starting our frontend
+ 
+  *  We will fix this by starting our frontend
+
+## Setting up the Front-End
+
+* Go ahead and open up another Terminal in VSCode by going to Terminal > New Terminal
+
+ * We have to run the frontend and backend at the same time, so don't close your old window
+
+* Next, we have to check if we have Node.js installed
+
+ * If you do not, please follow this [tutorial](https://medium.com/geekculture/how-to-install-node-js-by-nvm-61addf4ab1ba)
+
+* To see if we successfully have Node.js installed, use the command:
+
+`node -v`
+
+ * If the version that shows up isn't >16.14 you may have problems ahead.
+ 
+ * Using Node Version Manager is ideal for this situation. Again see this [link](https://medium.com/geekculture/how-to-install-node-js-by-nvm-61addf4ab1ba) for more details.
+
+* Once Node.js is installed, use the VSCode terminal to navigate to our client folder
+
+ * This contains our React app (frontend)
+
+* To install the dependencies for the frontend, run the following command:
+`npm install`
+
+ * This may take a while, so be patient
+ 
+* After everything is done installing, you can start the frontend with the following command:
+`npm start`
+
+* If all goes well, you should see this in your console:
+![image](https://media.github.tamu.edu/user/14956/files/50e57c00-8e99-11ec-9750-c03a28c35958)
+ * VSCode will auto open your browser to localhost:3000
+  * If it doesn't, go to localhost:3000 in Chrome or Firefox
+
+* You should see the list from the backend that we saw earlier displayed on your screen.
+
+If you made it this far, I congratulate you!
+![image](https://media.github.tamu.edu/user/14956/files/b6d20380-8e99-11ec-9d82-edf9655f2e05)
+
+Feel free to poke around the code and make changes on your own. Please don't push anything. Thanks.
+-Sam
 
 
 
