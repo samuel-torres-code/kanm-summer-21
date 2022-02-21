@@ -1,4 +1,5 @@
-# react-flask-kanm-public
+# react-flask-kanm
+
 The public version of the starter code for the new KANM website
 
 ## What you will need:
