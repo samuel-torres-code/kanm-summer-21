@@ -1,11 +1,12 @@
 # react-flask-kanm
 
-The public version of the starter code for the new KANM website
+The version of the starter code for the new KANM website
 
 ## What you will need:
 
 * **Node.js v16.14.0**
 * **Python v3.8.10**
+
 
 ## Words of Wisdom
 
