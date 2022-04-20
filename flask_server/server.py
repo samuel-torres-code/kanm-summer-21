@@ -336,7 +336,7 @@ def get_playlist():
     return jsonify({"msg": "Need more info on database"})
 
 @app.route("/get_article", methods=["GET"])
-def get_playlist():
+def get_article():
     '''
     Example Request:
     {
