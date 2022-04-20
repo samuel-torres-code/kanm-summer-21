@@ -31,7 +31,7 @@ class Song(db.Model):
                             
 class Playlist(db.Model):
    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-   date = db.Column(db.DateTime, nullable=False)
+   date = db.Column(db.Date, nullable=False)
    songs = db.relationship('Song',
                         secondary=songs,
                         lazy='subquery',
@@ -73,9 +73,11 @@ class User(db.Model):
                                 backref='user',
                                 lazy=True)
 
+
+
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    date = db.Column(db.DateTime,
+    date = db.Column(db.Date,
                     default=datetime.utcnow(),
                     nullable=False)
     content = db.Column(db.String, nullable=False)
@@ -83,7 +85,7 @@ class Article(db.Model):
     user_id = db.Column(db.Integer,
                         db.ForeignKey('user.id'),
                         nullable=False)
-
+    image = db.Column(db.String, nullable=False)
 
 
 # Create the database before we take any requests
@@ -188,7 +190,7 @@ to get permission.
 @app.route("/protected", methods=["GET"])
 @jwt_required()
 def protected():
-    current_user = User.query.filter_by(uin=get_jwt_identity()).first()
+    current_user = User.query.filter_by(email=get_jwt_identity()).first()
     return jsonify(logged_in_as=current_user.dj_name)
 
 
@@ -211,12 +213,13 @@ def add_show():
     This request must come from an officer's account. If not, then
     it will be invalid.
     '''
-    current_user = User.query.filter_by(uin=get_jwt_identity()).first()
+    current_user = User.query.filter_by(email=get_jwt_identity()).first()
     if not current_user.officer:
         return jsonify({"msg": "Only officers are allowed to add shows!"}), 401
 
     email = request.form.get("email", 0)
-    date = request.form.get("date", 0)
+    # date = request.form.get("date", 0)
+    date = datetime.strptime(request.form.get("date", 0), '%Y-%m-%d %I:%M:%S %p');
     show_name = request.form.get("show_name", 0)
 
     new_show_user = User.query.filter_by(email=email).first()
@@ -248,7 +251,7 @@ def add_article():
     This request must come from an officer's account. If not, then
     it will be invalid.
     '''
-    current_user = User.query.filter_by(uin=get_jwt_identity()).first()
+    current_user = User.query.filter_by(email=get_jwt_identity()).first()
     if not current_user.officer:
         return jsonify({"msg": "Only officers are allowed to add articles!"}), 401
 
