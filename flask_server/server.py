@@ -90,15 +90,18 @@ class Article(db.Model):
 @app.before_first_request
 def init_db():
     db.create_all()
-    new_user = User(uin=423,
-                    first_name="Noah",
-                    password="balaclava",
-                    last_name="Smith",
-                    dj_name="Yeat",
-                    email="yeat@gmail.com",
-                    officer=True)
-    db.session.add(new_user)
-    db.session.commit()
+
+    # Add a test officer if not added already.
+    if not User.query.filter_by(uin=423).first():
+        new_user = User(uin=423,
+                        first_name="Noah",
+                        password="balaclava",
+                        last_name="Smith",
+                        dj_name="Yeat",
+                        email="yeat@gmail.com",
+                        officer=True)
+        db.session.add(new_user)
+        db.session.commit()
 
 # Members API Route
 @app.route("/members")
