@@ -5,7 +5,13 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
-import Home from "./containers/Home";
+import  Home  from "./containers/Home";
+import  About  from "./containers/About";
+import  Contact  from "./containers/Contact";
+import  Apply  from "./containers/Apply";
+import  Listen  from "./containers/Listen";
+import  Schedule  from "./containers/Schedule";
+import  Frequency  from "./containers/Frequency";
 import NoMatch from "./containers/NoMatch";
 
 import "./App.css";
@@ -17,7 +23,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/apply" element={<Apply />} />
+          <Route path="/listen" element={<Listen />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/frequency" element={<Frequency />} />
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
@@ -42,8 +53,8 @@ function Layout() {
           <Navbar.Brand href="/">
           <img
         src="/trans_med.png"
-        width="30"
-        height="30"
+        width="50"
+        height="50"
         className="d-inline-block align-top"
         alt="KANM Student Radio Logo"
       />
