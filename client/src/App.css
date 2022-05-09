@@ -6,5 +6,8 @@
   font-family: "Teko", sans-serif;
   letter-spacing: 1px;
 }
+#basic-navbar-nav {
+  align-items: flex-end;
+}
 
 
