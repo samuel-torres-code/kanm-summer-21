@@ -1,0 +1,11 @@
+//Overwrite Theme Variables
+
+//Quick Test
+$primary: red;
+$body-bg: #000;
+$body-color: #111;
+
+
+
+//Import bootstrap styles at the bottom!
+@import "~bootstrap/scss/bootstrap.scss";
