@@ -1,0 +1,102 @@
+
+nav.navbar {
+    background-color: var(--dark);
+    margin-top: auto;
+    padding-bottom: 0;
+    padding-top: 0;
+    color:var(--light);
+    border-bottom: var(--primary) 4px;
+  
+  }
+  
+   /* navbar-brand inherits the main link colour (the purple) and applies the #333 hover: */
+  
+  .navbar a:hover {
+    color:var(--light); /* applies to all hovered links on nav */
+  }
+  
+  .nav a {
+    color:var(--light); /*applies to all of the ul links */
+    }
+  
+  /* Makes the header buttons align to the bottom */
+  @media (min-width: 992px) {
+    .navbar-expand-lg, .navbar-collapse {
+      margin-top: auto;
+    }
+  }
+
+  /* Formats text in header */
+  .main-nav {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .9rem;
+  }
+  
+  /* Resets margins and padding */
+  .navbar-brand
+  {
+    padding: 0;
+    margin:0;
+  }
+  
+  /* I don't think this does anything */
+  .navbar
+  {
+      padding: 0;
+      margin: 0;
+      background: var(--primary);
+  
+  }
+  
+  /* I don't think this does anything */
+  .navbar-nav-collapse {
+    margin-top: auto;
+  }
+  
+
+  /* Fixes padding on header titles */
+  .nav-link {
+    padding-bottom: 0;
+  }
+
+
+  .active {
+    background-color: var(--primary);
+    color:floralwhite!important;
+  }
+  
+  
+  /* Sets the bottom border of div to primary color */
+  .border-bottom-primary {
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  /* I wanted this to change the dropdown to black but it didnt work */
+  .dropdown-menu {
+    background-color: hsl(120, 20%, 10%);
+  }
+  
+  /* Wanted to get rid of the outline when you click buttons but it didnt work */
+  .navbar-toggler {
+    border: 0px none !important;
+  }
+  
+  
+  /*sets padding for container to zero, not used currently*/
+  .container {
+    padding: 0 0 0 0 !important;
+  }
+  
+  /* Fixes left and right margin of nav */
+  .navbar-nav {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  
+  /* Fixes top and bottom padding of nav in collapse mode */
+  .navbar-nav  > .nav-link .nav-item{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
