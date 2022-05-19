@@ -1,0 +1,42 @@
+ /* Used to style play icon */
+.playButton {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+
+/* Legacy Class Used to add padding and change text behavior */
+.now-playing-container {
+    /*font-family: 'Orbitron', sans-serif !important;*/
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    text-align: left;
+
+}
+
+/* Used to style text for Now ... */
+.now-playing-head {
+    letter-spacing: 2px;
+    font-size: .9rem;
+    margin-bottom: 0;
+}
+
+/* Used to style text for Song/Show Title */
+.now-playing-title {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* Used to style Artist/DJ name/ show time */
+.now-playing-extra {
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+

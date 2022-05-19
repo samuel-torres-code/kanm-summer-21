@@ -1,10 +1,16 @@
 //Overwrite Theme Variables
 
 //Quick Test
-$primary: red;
-$body-bg: #000;
-$body-color: #111;
+$primary: #B90D1B;
+$body-bg: #2d2d2d;
+$body-color: floralwhite;
+$dark: #101010;
 
+//This should change the fonts by default (needs to be fixed) using workaround in App.css rn
+// $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Teko", sans-serif !default;
+// $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+// $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// $font-family-base:       $font-family-sans-serif !default;
 
 
 //Import bootstrap styles at the bottom!
