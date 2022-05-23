@@ -2,12 +2,17 @@ import React from "react";
 
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Nav from "react-bootstrap/Nav";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import SocialMedia from "./SocialMedia";
+
+
+import "./Footer.css";
+import NavLink from "react-bootstrap/esm/NavLink";
+
 
 
 
@@ -15,24 +20,29 @@ function Footer() {
 
     return (
         <div className="Footer">
-            <Nav className="justify-content-center">
-                <Nav.Item >
-                    <Nav.Link href="https://twitter.com/KANMRadio" target="_blank">
-                        <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="https://www.instagram.com/kanm_radio/" target="_blank">
-                        <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="https://www.youtube.com/channel/UC0-wO1RPGgp9I7uCCgXBeRQ" target="_blank">
-                        <FontAwesomeIcon icon={faYoutube}></FontAwesomeIcon>
-                    </Nav.Link>
-                </Nav.Item>
+            <SocialMedia />
 
-            </Nav>
+            <Row className="shadow-sm py-3">
+                <Col xs={12} sm={4}>
+                    <div className="logo-wrapper" >
+                        <img
+                            width="75" height="75"
+                            src="/trans_med.png"
+                            alt="KANM Student Radio Logo"
+                        />
+                    </div>
+                </Col>
+
+                <Col xs={6} sm={4}>
+                    Links
+                </Col>
+                <Col xs={6} sm={4}>
+                    Credits
+
+                </Col>
+
+            </Row>
+
         </div>
     );
 

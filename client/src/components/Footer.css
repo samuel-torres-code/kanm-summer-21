@@ -1,0 +1,14 @@
+
+.Footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.row {
+    background-color: var(--bs-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .9rem;
+}

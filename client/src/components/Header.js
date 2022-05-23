@@ -121,14 +121,7 @@ function Header() {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <Button
-            onClick={() => setOpenMediaPlayer(!openMediaPlayer)}
-            aria-controls="example-collapse-text"
-            aria-expanded={openMediaPlayer}
-            variant="dark"
-          >
-            <FontAwesomeIcon icon={faHeadphonesSimple}></FontAwesomeIcon>
-          </Button>
+          
         </Container>
 
 
