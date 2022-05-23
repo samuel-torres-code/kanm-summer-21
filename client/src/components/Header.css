@@ -12,11 +12,11 @@ nav.navbar {
    /* navbar-brand inherits the main link colour (the purple) and applies the #333 hover: */
   
   .navbar a:hover {
-    color:var(--light); /* applies to all hovered links on nav */
+    color:var(--bs-light); /* applies to all hovered links on nav */
   }
   
   .nav a {
-    color:var(--light); /*applies to all of the ul links */
+    color:var(--bs-light); /*applies to all of the ul links */
     }
   
   /* Makes the header buttons align to the bottom */
@@ -61,7 +61,7 @@ nav.navbar {
   }
 
 
-  .active {
+  .current-location {
     background-color: var(--primary);
     color:floralwhite!important;
   }
