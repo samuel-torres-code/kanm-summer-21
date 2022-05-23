@@ -1,17 +1,15 @@
 import React from "react";
 
-import Container from "react-bootstrap/esm/Container";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Nav from "react-bootstrap/Nav";
+
 
 import SocialMedia from "./SocialMedia";
 
 
 import "./Footer.css";
-import NavLink from "react-bootstrap/esm/NavLink";
+
 
 
 
@@ -20,9 +18,12 @@ function Footer() {
 
     return (
         <div className="Footer">
+            {/* Stores the social media buttons above the header */}
             <SocialMedia />
 
+            {/* Stores the true header */}
             <Row className="shadow-sm py-3">
+                {/* Stores the logo */}
                 <Col xs={12} sm={4}>
                     <div className="logo-wrapper" >
                         <img
@@ -33,6 +34,7 @@ function Footer() {
                     </div>
                 </Col>
 
+                {/* Stores the text */}
                 <Col xs={6} sm={4}>
                     Links
                 </Col>

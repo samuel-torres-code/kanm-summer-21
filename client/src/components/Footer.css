@@ -1,4 +1,4 @@
-
+/* Makes the footer "stick" to bottom if the content doesn't fill screen */
 .Footer {
     position: absolute;
     left: 0;
@@ -6,6 +6,7 @@
     width: 100%;
     overflow: hidden;
 }
+/* Styles text in footer */
 .row {
     background-color: var(--bs-dark);
     text-transform: uppercase;
