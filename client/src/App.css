@@ -1,5 +1,6 @@
 :root {
   --primary: #B90D1B;
+  --background: #2d2d2d;
 }
 /* CSS RESET */
 /* html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,
@@ -26,6 +27,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: "Chivo", sans-serif !important;
     margin: 0;
     padding: 0;
+
   
 }
 

@@ -22,7 +22,7 @@ function Footer() {
             <SocialMedia />
 
             {/* Stores the true header */}
-            <Row className="shadow-sm py-3">
+            <Row className="shadow-sm py-3 footer-row">
                 {/* Stores the logo */}
                 <Col xs={12} sm={4}>
                     <div className="logo-wrapper" >
