@@ -44,8 +44,7 @@ function Schedule() {
   const amShowRows = shows.slice(0, 12);
   const pmShowRows = shows.slice(12, 24);
 
-  //Luxon for current day
-  const dayOfWeek = 5;
+
 
 
 
@@ -56,40 +55,60 @@ function Schedule() {
         <Row >
           <h1> TODAYS SHOWS </h1>
         </Row>
-        <Row className="align-items-center" >
+        <Row className=" equal-height-columns" >
+          
           <Col>
+          <div className="equal-height-content">
             {amShowRows.map(
               ({ id, showName, weekday, hour, image, dj }) => (
-                <Row className="show-row">
-                  {showName} {hour == 0 ? 12 : (hour % 12)}:00
+                <Row className="show-row border-bottom-primary">
+                  {showName} {hour === 0 ? 12 : (hour % 12)}:00
                   With {dj}
-                  <img className="image-resize" src={image} />
+                  {/* <img className="image-resize" src={image} /> */}
                 </Row>
               )
             )}
+            </div>
+          </Col>
+          
+          <Col className=" table-wrapper mx-0 my-0 px-0 py-0 center-vertical-line" xs={1}>
+          <div className="equal-height-content table-cell-wrapper">
+            
+            
+              <Row className="justify-content-end transparent-background" fluid>
+                
+                <Col xs={6} className=" py-3 px-0">
+                  <div className="left-half float-end">
+                    <div className="text-rotate-left">
+                    AM
+                    </div>
+                  </div>
+            </Col>
+            <Col xs={6} className="py-3 px-0">
+              <div className="right-half">
+                <div className="text-rotate-right ">
+                PM
+                </div>
+              </div>
+            </Col>
+            </Row>
+            
+            </div>
+          </Col>
 
-          </Col>
-          <Col className=" border-right" xs={1} fluid>
-            <div className="text-rotate-right align-self-center">
-              AM
-            </div>
-          </Col>
-          <Col className=" border-left" xs={1} fluid>
-            <div className="text-rotate-left">
-              PM
-            </div>
-          </Col>
 
           <Col>
+          <div className="equal-height-content">
             {pmShowRows.map(
               ({ id, showName, weekday, hour, image, dj }) => (
-                <Row className="show-row">
-                  {showName} {hour == 12 ? 12 : (hour % 12)}:00
+                <Row className="show-row border-bottom-primary">
+                  {showName} {hour === 12 ? 12 : (hour % 12)}:00
                   With {dj}
-                  <img className="image-resize" src={image} />
+                  {/* <img className="image-resize" src={image} /> */}
                 </Row>
               )
             )}
+            </div>
 
 
           </Col>

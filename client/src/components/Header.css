@@ -67,10 +67,7 @@ nav.navbar {
   }
   
   
-  /* Sets the bottom border of div to primary color */
-  .border-bottom-primary {
-    border-bottom: 2px solid var(--primary);
-  }
+
   
   /* I wanted this to change the dropdown to black but it didnt work */
   .dropdown-menu {

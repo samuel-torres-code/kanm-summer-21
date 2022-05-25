@@ -12,8 +12,14 @@
 .show-row {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+
   background-color: var(--bs-dark) !important;
 }
+
+
+
 
 .border-left {
   border-left: 1px var(--primary) solid;
@@ -43,15 +49,30 @@
 }
 
 .border-right {
-
+  
   border-right: 1px var(--primary) solid;
   
 }
-.semicircle-right {
+.semicircle-top {
 
-  border-right: 1px var(--primary) solid;
+  border: 2px var(--primary) solid;
+
+  border-radius: 50% 50% 50% 50%;
   
 }
+
+.transparent-background {
+  background: transparent !important;
+}
+
+.circle-container {
+  border: 2px var(--primary) solid;
+  height: 150% !important;
+  border-radius: 100% 150% 100% 100%;
+
+}
+
+
 
 .text-rotate-right {
   transform: rotate(90deg);
@@ -79,4 +100,56 @@
   width: 10rem !important;
   height: 7.5rem !important;
   overflow: hidden;
+}
+
+.equal-height-columns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.table-wrapper {
+  display: table !important;
+
+}
+
+.center-vertical-line {
+  background: linear-gradient(var(--primary), var(--primary)) no-repeat center/2px 100%;
+}
+.table-cell-wrapper {
+  display: table-cell !important;
+  vertical-align: middle !important;
+}
+
+.equal-height-content {
+  height: 100%;
+  
+}
+
+.left-half,
+.right-half {
+  float: left;
+  width: 40px;
+  height: 80px;
+  line-height: 80px;
+  color: white;
+  text-align: center;
+
+  border: 2px var(--primary) solid;
+
+}
+.left-half {
+  border-right: 0px;
+}
+
+.right-half {
+  border-left: 0px;
+}
+.left-half:nth-child(1) {
+  border-radius: 80px 0 0 80px;
+}
+.right-half:nth-child(1) {
+  border-radius: 0 80px 80px 0;
 }

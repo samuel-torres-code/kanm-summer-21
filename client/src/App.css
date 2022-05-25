@@ -31,3 +31,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   
 }
 
+  /* Sets the bottom border of div to primary color */
+  .border-bottom-primary {
+    border-bottom: 2px solid var(--primary);
+  }
+
