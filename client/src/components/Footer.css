@@ -10,6 +10,5 @@
 .footer-row {
     background-color: var(--bs-dark) !important;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: .9rem;
+    
 }

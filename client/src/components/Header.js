@@ -12,11 +12,15 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons";
 
+import { DateTime } from "luxon";
+
 import MediaPlayer from "./MediaPlayer";
 
 import "./Header.css";
 
 function Header() {
+
+  
 
   const location = useLocation(); //Used to grab client session data
   const [url, setUrl] = useState(null); //Stores the current URL of browser
@@ -30,7 +34,7 @@ function Header() {
 
 
   return (
-    <div className="Header">
+    <div className="Header text-spacing-primary">
       {/* Stores Entire Navbar (including anything that pops out of it I.E. MediaPlayer) */}
       <Navbar
         className="main-nav flex-column shadow-sm"
@@ -79,9 +83,9 @@ function Header() {
                 About
               </Nav.Link>
               <Nav.Link
-                className={url === "/schedule" ? " current-location" : ""}
+                className={url === `/schedule/` ? " current-location" : ""}
                 as={Link}
-                to="/schedule"
+                to={`/schedule/`}
               >
                 Schedule
               </Nav.Link>

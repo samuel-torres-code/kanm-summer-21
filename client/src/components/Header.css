@@ -29,8 +29,7 @@ nav.navbar {
   /* Formats text in header */
   .main-nav {
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: .9rem;
+    
   }
   
   /* Resets margins and padding */
@@ -63,7 +62,7 @@ nav.navbar {
 
   .current-location {
     background-color: var(--primary);
-    color:floralwhite!important;
+    color: var(--main-text-color)!important;
   }
   
   

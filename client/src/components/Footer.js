@@ -17,7 +17,7 @@ import "./Footer.css";
 function Footer() {
 
     return (
-        <div className="Footer">
+        <div className="Footer text-spacing-primary">
             {/* Stores the social media buttons above the header */}
             <SocialMedia />
 

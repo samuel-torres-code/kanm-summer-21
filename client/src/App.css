@@ -1,6 +1,9 @@
 :root {
   --primary: #B90D1B;
+  --secondary: var(--bs-gray-600);
+  --dark: #101010;
   --background: #2d2d2d;
+  --main-text-color: floralwhite;
 }
 /* CSS RESET */
 /* html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,
@@ -25,6 +28,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .App {
   text-align: center;
   font-family: "Chivo", sans-serif !important;
+  color: var(--main-text-color);
     margin: 0;
     padding: 0;
 
@@ -36,3 +40,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border-bottom: 2px solid var(--primary);
   }
 
+  .border-bottom-secondary {
+    border-bottom: 2px solid var(--bs-gray-400);
+  }
+
+  .text-spacing-primary {
+    letter-spacing: 2px;
+    font-size: .9rem;
+    font-weight: bol;
+  }
+
+  .text-spacing-secondary {
+    letter-spacing: 3px;
+    font-size: .8rem;
+  }

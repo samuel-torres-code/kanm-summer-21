@@ -1,9 +1,13 @@
-import React from "react";
+import { React, useState } from "react";
+
 import "./Schedule.css";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";
+import { DateTime } from "luxon";
+import { getShows } from "../api/Services";
 
 
 
@@ -11,103 +15,120 @@ import Container from "react-bootstrap/esm/Container";
 function Schedule() {
 
   //Needs to be sorted by time ascending
-  //Backend needs to filter by day
   //If the show is two hours, it will have two elements, etc.
-  const shows = [
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 0, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 1, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 2, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 3, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 4, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 5, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 6, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 7, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 8, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 9, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 10, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: 1, showName: "Sam's Show", weekday: 5, hour: 11, image: "https://4.bp.blogspot.com/_Y4Ao_KEr11k/TUnGfIhC7RI/AAAAAAAAAHU/OIi31pm6quE/s1600/Small+Face+Cat.jpg", dj: "Sam" },
-    { id: 2, showName: "Liam's Show", weekday: 5, hour: 12, image: "https://4.bp.blogspot.com/_Y4Ao_KEr11k/TUnGfIhC7RI/AAAAAAAAAHU/OIi31pm6quE/s1600/Small+Face+Cat.jpg", dj: "Liam" },
-    { id: 3, showName: "Josh's Show", weekday: 5, hour: 13, image: "https://4.bp.blogspot.com/_Y4Ao_KEr11k/TUnGfIhC7RI/AAAAAAAAAHU/OIi31pm6quE/s1600/Small+Face+Cat.jpg", dj: "Josh" },
-    { id: 4, showName: "Miguel's Show", weekday: 5, hour: 14, image: "https://4.bp.blogspot.com/_Y4Ao_KEr11k/TUnGfIhC7RI/AAAAAAAAAHU/OIi31pm6quE/s1600/Small+Face+Cat.jpg", dj: "Miguel" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 15, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 16, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 17, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 18, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 19, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 20, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 21, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 22, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" },
-    { id: -1, showName: "AutoDJ", weekday: 5, hour: 23, image: "https://www.ecsite.eu/sites/default/files/robot_example_2.jpg", dj: "Ben the AutoDJ" }
-  ];
-
-
-  const amShowRows = shows.slice(0, 12);
-  const pmShowRows = shows.slice(12, 24);
-
-
-
-
+  //Fields: id, showName, genre, weekday, hour, image, dj, specialty
+  const shows = getShows;
+  const today = DateTime.now().toFormat('cccc').toString().toLowerCase();
+  const [day, setDay] = useState(today); //Stores the current URL of browser
 
 
   return (
     <div className="Schedule">
       <Container fluid>
-        <Row >
-          <h1> TODAYS SHOWS </h1>
+        <Row className="justify-content-start day-row" >
+
+          <Form.Select style={{width: today.length*1.5 + 'rem'}} className="text-spacing-primary bolder-text bigger-text" aria-label="Weekday Schedule Select" defaultValue={today} onChange={(e) => {
+            const selectedDay = e.target.value;
+            setDay(selectedDay);
+          }} >
+            <option value="sunday">SUNDAY</option>
+            <option value="monday">MONDAY</option>
+            <option value="tuesday">TUESDAY</option>
+            <option value="wednesday">WEDNESDAY</option>
+            <option value="thursday">THURSDAY</option>
+            <option value="friday">FRIDAY</option>
+            <option value="saturday">SATURDAY</option>
+          </Form.Select>
+
+          <Col className="py-2 text-spacing-primary bigger-text">SHOWS</Col>
+
+
         </Row>
         <Row className=" equal-height-columns" >
-          
-          <Col>
-          <div className="equal-height-content">
-            {amShowRows.map(
-              ({ id, showName, weekday, hour, image, dj }) => (
-                <Row className="show-row border-bottom-primary">
-                  {showName} {hour === 0 ? 12 : (hour % 12)}:00
-                  With {dj}
-                  {/* <img className="image-resize" src={image} /> */}
-                </Row>
-              )
-            )}
+
+          <Col >
+            <div className="equal-height-content">
+              {shows.filter(show => show.hour < 12 && show.weekday === day).map
+                (filteredShow => (
+                  <Row className="show-row border-bottom-primary shadow-sm" key={filteredShow.hour}>
+                    <Col >
+                      <Row >
+                        <div className="text-spacing-primary float-start bolder-text">
+                          {filteredShow.showName}
+                        </div>
+                      </Row>
+                      <Row>
+                        <div className="text-spacing-secondary float-start">
+                          With {filteredShow.dj}
+                        </div>
+                      </Row>
+                    </Col>
+                    <Col>
+                      <div className="text-spacing-primary bolder-text">
+                        {filteredShow.hour === 0 ? 12 : (filteredShow.hour % 12)}:00
+                      </div>
+                    </Col>
+
+                    <img className="image-resize" src={filteredShow.image} />
+                  </Row>
+                )
+                )}
             </div>
           </Col>
-          
+
           <Col className=" table-wrapper mx-0 my-0 px-0 py-0 center-vertical-line" xs={1}>
-          <div className="equal-height-content table-cell-wrapper">
-            
-            
+            <div className="equal-height-content table-cell-wrapper">
+
+
               <Row className="justify-content-end transparent-background" fluid>
-                
+
                 <Col xs={6} className=" py-3 px-0">
                   <div className="left-half float-end">
-                    <div className="text-rotate-left">
-                    AM
+                    <div className=" text-rotate-left font-spacing-primary ">
+                      AM
                     </div>
                   </div>
-            </Col>
-            <Col xs={6} className="py-3 px-0">
-              <div className="right-half">
-                <div className="text-rotate-right ">
-                PM
-                </div>
-              </div>
-            </Col>
-            </Row>
-            
+                </Col>
+                <Col xs={6} className="py-3 px-0">
+                  <div className="right-half">
+                    <div className="text-rotate-right font-spacing-primary ">
+                      PM
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+
             </div>
           </Col>
 
 
-          <Col>
-          <div className="equal-height-content">
-            {pmShowRows.map(
-              ({ id, showName, weekday, hour, image, dj }) => (
-                <Row className="show-row border-bottom-primary">
-                  {showName} {hour === 12 ? 12 : (hour % 12)}:00
-                  With {dj}
-                  {/* <img className="image-resize" src={image} /> */}
-                </Row>
-              )
-            )}
+          <Col >
+            <div className="equal-height-content">
+              {shows.filter(show => show.hour >= 12 && show.weekday === day).map
+                (filteredShow => (
+                  <Row className="show-row border-bottom-primary" key={filteredShow.hour}>
+                    <Col >
+                      <Row >
+                        <div className="text-spacing-primary float-start bolder-text">
+                          {filteredShow.showName}
+                        </div>
+                      </Row>
+                      <Row>
+                        <div className="text-spacing-secondary float-start">
+                          With {filteredShow.dj}
+                        </div>
+                      </Row>
+                    </Col>
+                    <Col>
+                      <div className="text-spacing-primary bolder-text">
+                        {filteredShow.hour === 12 ? 12 : (filteredShow.hour % 12)}:00
+                      </div>
+                    </Col>
+
+                    <img className="image-resize" src={filteredShow.image} />
+                  </Row>
+                )
+                )}
             </div>
 
 
@@ -119,3 +140,4 @@ function Schedule() {
 }
 
 export default Schedule;
+
